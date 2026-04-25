@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-20">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterviewReady | Resume Optimization Service</title>
+    <meta name="description" content="We help students and entry-level job seekers get more interviews by rewriting and optimizing their resumes for specific job applications.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B1120', 
+                            blue: '#1E293B', 
+                            accent: '#14B8A6', 
+                            accentHover: '#0D9488', 
+                            light: '#F8FAFC' 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .blob-bg {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Transition only appearance, not layout/size */
+        #navbar {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-800 font-sans">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-[100] bg-brand-dark/0 border-b border-transparent py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14">
+                <!-- Logo -->
+                <a href="#home" class="flex-shrink-0 flex items-center gap-2 relative z-[110]">
+                    <div class="w-10 h-10 bg-brand-accent rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand-accent/30">
+                        <i class="ph-bold ph-rocket-launch text-2xl"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-white">Interview<span class="text-brand-accent">Ready</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 relative z-[110]">
+                    <a href="#how-it-works" class="text-slate-300 hover:text-brand-accent font-medium transition-colors text-sm">How It Works</a>
+                    <a href="#services" class="text-slate-300 hover:text-brand-accent font-medium transition-colors text-sm">Services</a>
+                    <a href="#add-ons" class="text-slate-300 hover:text-brand-accent font-medium transition-colors text-sm">Add-ons</a>
+                    <a href="#about" class="text-slate-300 hover:text-brand-accent font-medium transition-colors text-sm">About Us</a>
+                    <a href="#contact" class="bg-brand-accent hover:bg-brand-accentHover text-white px-5 py-2.5 rounded-lg font-semibold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-brand-accent/20 text-sm">
+                        Join Waitlist
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center relative z-[110]">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-white/10 shadow-2xl">
+            <div class="px-4 pt-2 pb-6 space-y-2 text-center">
+                <a href="#how-it-works" class="block px-3 py-3 text-slate-300 font-medium hover:bg-white/5 rounded-lg mobile-link">How It Works</a>
+                <a href="#services" class="block px-3 py-3 text-slate-300 font-medium hover:bg-white/5 rounded-lg mobile-link">Services</a>
+                <a href="#add-ons" class="block px-3 py-3 text-slate-300 font-medium hover:bg-white/5 rounded-lg mobile-link">Add-ons</a>
+                <a href="#about" class="block px-3 py-3 text-slate-300 font-medium hover:bg-white/5 rounded-lg mobile-link">About Us</a>
+                <a href="#contact" class="block px-3 py-3 mt-4 text-brand-dark bg-brand-accent font-semibold rounded-lg mobile-link">Join Waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-dark">
+        <!-- Decorative Blobs -->
+        <div class="blob-bg bg-brand-accent w-96 h-96 rounded-full top-0 left-[-100px]"></div>
+        <div class="blob-bg bg-blue-600 w-96 h-96 rounded-full bottom-0 right-[-100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-accent/10 border border-brand-accent/20 text-brand-accent text-sm font-semibold mb-6">
+                        <i class="ph-fill ph-check-circle"></i>
+                        <span>Proven Resume Strategies</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+                        Stop Getting Rejected. <br class="hidden sm:block"/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-400">Start Getting Interviews.</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        We don't just rewrite resumes—we scientifically tailor them to specific job descriptions using ATS-beating techniques designed for students and entry-level talent.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:-translate-y-1 shadow-xl shadow-brand-accent/20 flex items-center justify-center gap-2">
+                            Secure Your Spot
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                        <a href="#benefits" class="px-8 py-4 rounded-xl font-bold text-lg text-white glass hover:bg-white/10 transition-all flex items-center justify-center">
+                            See How It Works
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="mt-10 flex items-center justify-center lg:justify-start gap-4 text-slate-400 text-sm font-medium">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-brand-dark" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="User">
+                        </div>
+                        <span>Trusted by Merit-Scholar Bay-Area students</span>
+                    </div>
+                </div>
+
+                <!-- Hero Image/Graphic -->
+                <div class="relative hidden lg:block">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-accent/20 to-transparent rounded-3xl transform rotate-3 scale-105 pointer-events-none"></div>
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1000&q=80" alt="Student smiling at laptop" class="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full border border-white/10 pointer-events-none">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-brand-dark/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-4 shadow-xl">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-400">
+                            <i class="ph-fill ph-envelope-open text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold">Interview Invitation</p>
+                            <p class="text-slate-300 text-sm">"We'd love to meet you!"</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Cloud (ATS Systems) -->
+    <div class="bg-brand-blue py-8 border-y border-white/5 text-center">
+        <p class="text-slate-400 text-sm font-semibold tracking-wider uppercase">Optimized to pass major Applicant Tracking Systems (ATS)</p>
+    </div>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-accent font-bold tracking-wide uppercase text-sm mb-2">The Process</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Your Path to the Interview Chair</h3>
+                <p class="text-slate-600 text-lg">Getting ghosted stops here. Our 3-step process ensures your resume actually makes it to a human reader.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-1/6 right-1/6 h-0.5 bg-slate-200 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-brand-light rounded-2xl border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:shadow-md group-hover:border-brand-accent transition-all duration-300">
+                        <i class="ph-duotone ph-upload-simple text-5xl text-brand-blue group-hover:text-brand-accent transition-colors"></i>
+                    </div>
+                    <div class="bg-brand-accent text-white w-8 h-8 rounded-full flex items-center justify-center font-bold absolute top-[-10px] right-[50%] translate-x-[50%] md:translate-x-[60px] border-4 border-white">1</div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-2">Send Your Resume</h4>
+                    <p class="text-slate-600">Upload your current draft along with the link to the specific job you want to land.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-brand-light rounded-2xl border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:shadow-md group-hover:border-brand-accent transition-all duration-300">
+                        <i class="ph-duotone ph-magic-wand text-5xl text-brand-blue group-hover:text-brand-accent transition-colors"></i>
+                    </div>
+                    <div class="bg-brand-accent text-white w-8 h-8 rounded-full flex items-center justify-center font-bold absolute top-[-10px] right-[50%] translate-x-[50%] md:translate-x-[60px] border-4 border-white">2</div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-2">We Optimize & Tailor</h4>
+                    <p class="text-slate-600">Our experts rewrite your bullets, fix the formatting, and inject ATS-friendly keywords.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-brand-light rounded-2xl border border-slate-200 flex items-center justify-center mb-6 shadow-sm group-hover:shadow-md group-hover:border-brand-accent transition-all duration-300">
+                        <i class="ph-duotone ph-handshake text-5xl text-brand-blue group-hover:text-brand-accent transition-colors"></i>
+                    </div>
+                    <div class="bg-brand-accent text-white w-8 h-8 rounded-full flex items-center justify-center font-bold absolute top-[-10px] right-[50%] translate-x-[50%] md:translate-x-[60px] border-4 border-white">3</div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-2">You Get Interviews</h4>
+                    <p class="text-slate-600">Apply with confidence and start waking up to "We'd love to interview you" emails.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div>
+                    <h2 class="text-brand-accent font-bold tracking-wide uppercase text-sm mb-2">Why Choose Us</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Built to Beat the Bots and Impress the Humans.</h3>
+                    <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                        A pretty resume isn't enough anymore. You need a strategic document that clears the software screens and immediately proves your value to the hiring manager.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent">
+                                    <i class="ph-bold ph-robot"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-1">ATS Optimization</h4>
+                                <p class="text-slate-600">We format and structure your resume so Applicant Tracking Systems can easily read and rank it highly.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent">
+                                    <i class="ph-bold ph-trend-up"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-1">Action-Based Bullet Points</h4>
+                                <p class="text-slate-600">Goodbye "Responsible for." Hello impactful, metrics-driven achievements that prove you can do the job.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent">
+                                    <i class="ph-bold ph-crosshair"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-brand-dark mb-1">Tailored to Real Jobs</h4>
+                                <p class="text-slate-600">We don't use generic templates. Every word is chosen to align perfectly with the specific role you want.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive/Visual Element -->
+                <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+                    <div class="absolute -right-4 -top-4 bg-brand-dark text-white text-sm font-bold px-4 py-2 rounded-lg shadow-lg rotate-3 z-10">
+                        Before vs After
+                    </div>
+                    
+                    <!-- Before -->
+                    <div class="mb-6 opacity-60">
+                        <div class="flex items-center gap-2 mb-2 text-red-500 font-semibold text-sm">
+                            <i class="ph-bold ph-x-circle"></i> Standard Entry-Level Bullet
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-lg border border-slate-200 text-slate-500 text-sm">
+                            "Responsible for managing social media accounts and making posts."
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flex justify-center mb-6">
+                        <i class="ph-bold ph-arrow-down text-2xl text-slate-300"></i>
+                    </div>
+
+                    <!-- After -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-2 text-brand-accent font-semibold text-sm">
+                            <i class="ph-bold ph-check-circle"></i> InterviewReady Bullet
+                        </div>
+                        <div class="p-4 bg-teal-50 rounded-lg border border-teal-200 text-brand-dark text-sm font-medium">
+                            "Spearheaded a new social media strategy across 3 platforms, increasing organic engagement by 45% and growing following by 2,000+ within 3 months."
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Pricing -->
+    <section id="services" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-accent font-bold tracking-wide uppercase text-sm mb-2">Upcoming Services</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">The Launch Lineup</h3>
+                <p class="text-slate-600 text-lg">Simple, transparent pricing designed specifically for student and entry-level budgets. Join the waitlist to be notified when these go live.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+                
+                <!-- Package 1: Basic Rewrite -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow flex flex-col">
+                    <h4 class="text-2xl font-bold text-brand-dark mb-2">Basic Rewrite</h4>
+                    <p class="text-slate-500 text-sm mb-6 h-10">Perfect for general networking and career fairs.</p>
+                    <div class="mb-6 flex items-baseline gap-2">
+                        <span class="text-4xl font-extrabold text-brand-dark">$34.99</span>
+                        <span class="text-lg text-slate-400 line-through">$49.99</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-600 flex-grow">
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            Complete formatting overhaul
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            Action-verb optimization
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            Grammar & syntax check
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 px-4 bg-brand-light hover:bg-slate-200 text-brand-dark font-bold text-center rounded-xl transition-colors">Join Waitlist</a>
+                </div>
+
+                <!-- Package 2: Most Popular -->
+                <div class="bg-brand-dark rounded-3xl p-8 border-2 border-brand-accent shadow-xl transform lg:-translate-y-4 relative flex flex-col">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                        Most Popular
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-2">Resume + Tailoring</h4>
+                    <p class="text-slate-300 text-sm mb-6 h-10">Best for applying to your dream internship or role.</p>
+                    <div class="mb-6 flex items-baseline gap-2">
+                        <span class="text-4xl font-extrabold text-white">$49.99</span>
+                        <span class="text-lg text-slate-500 line-through">$79.99</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-300 flex-grow">
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            Everything in Basic
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            <span class="font-semibold text-white">Full ATS Keyword Optimization</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            <span class="font-semibold text-white">Tailored to 1 specific Job URL</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            2 Rounds of Revisions
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 px-4 bg-brand-accent hover:bg-brand-accentHover text-white font-bold text-center rounded-xl transition-colors">Join Waitlist</a>
+                </div>
+
+                <!-- Package 3: Fresh Start -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow flex flex-col">
+                    <h4 class="text-2xl font-bold text-brand-dark mb-2">The Fresh Start</h4>
+                    <p class="text-slate-500 text-sm mb-6 h-10">No resume? Switching fields? We build it from zero.</p>
+                    <div class="mb-6 flex items-baseline gap-2">
+                        <span class="text-4xl font-extrabold text-brand-dark">$69.99</span>
+                        <span class="text-lg text-slate-400 line-through">$99.99</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-600 flex-grow">
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            Strategic Intake Questionnaire
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            100% Original Content Creation
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            Professional Summary/Bio
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ph-bold ph-check text-brand-accent mt-0.5"></i>
+                            Project/Coursework Mapping
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 px-4 bg-brand-light hover:bg-slate-200 text-brand-dark font-bold text-center rounded-xl transition-colors">Join Waitlist</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-ons Section -->
+    <section id="add-ons" class="py-24 bg-brand-light border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-accent font-bold tracking-wide uppercase text-sm mb-2">Level Up</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Optional Add-ons</h3>
+                <p class="text-slate-600 text-lg">Enhance your chosen package with these powerful extras, tailored to give you an even bigger edge.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Add-on 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-accent transition-colors flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-blue">
+                            <i class="ph-duotone ph-envelope-simple-open text-2xl"></i>
+                        </div>
+                        <span class="font-bold text-brand-dark text-lg">+$20</span>
+                    </div>
+                    <h4 class="font-bold text-brand-dark mb-2">Custom Cover Letter</h4>
+                    <p class="text-sm text-slate-500 flex-grow mb-4">A fully personalized, compelling cover letter written specifically for your target role.</p>
+                    <a href="#contact" class="text-sm font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Add-on 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-accent transition-colors flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-blue">
+                            <i class="ph-duotone ph-linkedin-logo text-2xl"></i>
+                        </div>
+                        <span class="font-bold text-brand-dark text-lg">+$35</span>
+                    </div>
+                    <h4 class="font-bold text-brand-dark mb-2">LinkedIn Makeover</h4>
+                    <p class="text-sm text-slate-500 flex-grow mb-4">Complete overhaul of your headline, about section, and experience to attract recruiters.</p>
+                    <a href="#contact" class="text-sm font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Add-on 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-accent transition-colors flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-blue">
+                            <i class="ph-duotone ph-lightning text-2xl"></i>
+                        </div>
+                        <span class="font-bold text-brand-dark text-lg">+$10</span>
+                    </div>
+                    <h4 class="font-bold text-brand-dark mb-2">24-Hour Rush</h4>
+                    <p class="text-sm text-slate-500 flex-grow mb-4">Jump to the front of the line and get your first draft back within 24 hours.</p>
+                    <a href="#contact" class="text-sm font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Add-on 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-brand-accent transition-colors flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-blue">
+                            <i class="ph-duotone ph-chat-teardrop-text text-2xl"></i>
+                        </div>
+                        <span class="font-bold text-brand-dark text-lg">+$10</span>
+                    </div>
+                    <h4 class="font-bold text-brand-dark mb-2">Follow-Up Toolkit</h4>
+                    <p class="text-sm text-slate-500 flex-grow mb-4">Proven email templates for networking, post-interview thank yous, and checking in.</p>
+                    <a href="#contact" class="text-sm font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The InterviewReady Standard -->
+    <section id="our-promise" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-brand-dark mb-4">The InterviewReady Standard</h2>
+            <p class="text-center text-slate-600 mb-16 max-w-2xl mx-auto">No fluff, no false promises. Just proven, strategic resume writing designed to get your application moved to the "Yes" pile.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Promise 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full">
+                    <div class="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue mb-6">
+                        <i class="ph-duotone ph-notebook text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-3">Strategic Narrative Design</h4>
+                    <p class="text-slate-600 leading-relaxed flex-grow">We don't just fix typos. We restructure your experiences into a narrative that highlights your highest-impact contributions and potential.</p>
+                </div>
+
+                <!-- Promise 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full">
+                    <div class="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent">
+                        <i class="ph-duotone ph-file-code text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-3">ATS-Native Formatting</h4>
+                    <p class="text-slate-600 leading-relaxed flex-grow">We strip away the confusing graphics and complex columns that cause resumes to get auto-rejected, replacing them with clean, machine-readable structures.</p>
+                </div>
+
+                <!-- Promise 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full">
+                    <div class="w-12 h-12 bg-slate-800/10 rounded-xl flex items-center justify-center text-slate-800">
+                        <i class="ph-duotone ph-target text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-dark mb-3">Laser-Focused Tailoring</h4>
+                    <p class="text-slate-600 leading-relaxed flex-grow">A generic resume is an ignored resume. We map your specific coursework, projects, and experiences directly to the keywords of your target job description.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-dark rounded-3xl overflow-hidden shadow-2xl relative">
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#14B8A6 1px, transparent 1px); background-size: 20px 20px;"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative z-10">
+                    <div class="p-12 lg:p-16 flex flex-col justify-center">
+                        <h2 class="text-brand-accent font-bold tracking-wide uppercase text-sm mb-2">About Us</h2>
+                        <h3 class="text-3xl font-bold text-white mb-6">We've been exactly where you are.</h3>
+                        <p class="text-slate-300 mb-4 leading-relaxed">
+                            Firing off hundreds of applications into the void is soul-crushing. We started InterviewReady because we realized the system is broken for entry-level talent. 
+                        </p>
+                        <p class="text-slate-300 mb-8 leading-relaxed">
+                            You have the drive and the skills, but recruiters spend an average of 6 seconds looking at a resume. We bridge the gap by turning generic lists of duties into compelling, ATS-optimized stories of achievement. We focus purely on results: getting you to the interview phase.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 pt-6 border-t border-white/10">
+                            <div>
+                                <h4 class="text-3xl font-black text-brand-accent">100%</h4>
+                                <p class="text-slate-400 text-sm">Custom written for you</p>
+                            </div>
+                            <div>
+                                <h4 class="text-3xl font-black text-brand-accent">Zero</h4>
+                                <p class="text-slate-400 text-sm">Generic templates used</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80');">
+                        <div class="w-full h-full bg-brand-dark/20 mix-blend-multiply"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Contact Section -->
+    <section id="contact" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Info -->
+                <div>
+                    <h2 class="text-4xl font-bold text-brand-dark mb-6">Join the Exclusive Waitlist</h2>
+                    <p class="text-slate-600 text-lg mb-6 leading-relaxed">
+                        We are currently perfecting our service to ensure the highest quality results for for individuals striving to reach the next level in their academic or professional journey. 
+                    </p>
+                    <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                        Secure your spot by filling out the form. We'll save your contact details and notify you the moment our services officially launch so you can be first in line for an interview-winning resume.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-accent shadow-sm">
+                                <i class="ph-fill ph-envelope-simple text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 font-medium">Official Contact</p>
+                                <p class="text-brand-dark font-bold">interviewreadybusiness@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-accent shadow-sm">
+                                <i class="ph-fill ph-rocket text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 font-medium">Launch Status</p>
+                                <p class="text-brand-dark font-bold">Collecting Early Access</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Name</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all" placeholder="john@university.edu">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Service of Interest</label>
+                            <select class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all appearance-none">
+                                <option selected disabled>Select the service you're interested in</option>
+                                <option>Basic Rewrite</option>
+                                <option>Resume + Tailoring</option>
+                                <option>The Fresh Start (From Scratch)</option>
+                                <option>Other / General Interest</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Tell us about your goals (Optional)</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all" placeholder="e.g., Targeting a Summer Internship in Fintech..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-dark hover:bg-brand-blue text-white font-bold py-4 rounded-xl transition-colors shadow-lg flex items-center justify-center gap-2">
+                            Secure My Spot
+                            <i class="ph-bold ph-paper-plane-right"></i>
+                        </button>
+                        <p id="formStatus" class="hidden text-center text-sm font-bold text-green-600 mt-4">Success! You've been added to the launch list.</p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-slate-400 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-brand-accent rounded-lg flex items-center justify-center text-white">
+                        <i class="ph-bold ph-rocket-launch"></i>
+                    </div>
+                    <span class="font-bold text-lg text-white">Interview<span class="text-brand-accent">Ready</span></span>
+                </div>
+                
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">FAQ</a>
+                </div>
+            </div>
+            <div class="text-center mt-12 text-sm text-slate-500">
+                &copy; <span id="year"></span> InterviewReady. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on ANY navigation attempt
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // OPTIMIZED SCROLL SCRIPT - No layout shifts
+        const navbar = document.getElementById('navbar');
+        let isActive = false;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            
+            if (currentScroll > 40 && !isActive) {
+                navbar.classList.add('shadow-lg', 'bg-brand-dark/100', 'border-white/10');
+                navbar.classList.remove('bg-brand-dark/0', 'border-transparent');
+                isActive = true;
+            } else if (currentScroll <= 40 && isActive) {
+                navbar.classList.remove('shadow-lg', 'bg-brand-dark/100', 'border-white/10');
+                navbar.classList.add('bg-brand-dark/0', 'border-transparent');
+                isActive = false;
+            }
+        }, { passive: true });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="ph-bold ph-spinner animate-spin"></i> Saving...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                this.reset();
+                
+                const status = document.getElementById('formStatus');
+                status.classList.remove('hidden');
+                
+                setTimeout(() => {
+                    status.classList.add('hidden');
+                }, 5000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
