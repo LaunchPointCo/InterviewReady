@@ -560,7 +560,7 @@
                 <div>
                     <h2 class="text-4xl font-bold text-brand-dark mb-6">Join the Exclusive Waitlist</h2>
                     <p class="text-slate-600 text-lg mb-6 leading-relaxed">
-                        We are currently perfecting our service to ensure the highest quality results for for individuals striving to reach the next level in their academic or professional journey. 
+                        We are currently perfecting our service to ensure the highest quality results for individuals striving to reach the next level in their academic or professional journey. 
                     </p>
                     <p class="text-slate-600 text-lg mb-8 leading-relaxed">
                         Secure your spot by filling out the form. We'll save your contact details and notify you the moment our services officially launch so you can be first in line for an interview-winning resume.
@@ -631,24 +631,43 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark text-slate-400 py-12 border-t border-white/10">
+    <footer class="bg-brand-dark text-slate-400 py-16 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-brand-accent rounded-lg flex items-center justify-center text-white">
-                        <i class="ph-bold ph-rocket-launch"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Brand & Description -->
+                <div class="col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-brand-accent rounded-lg flex items-center justify-center text-white">
+                            <i class="ph-bold ph-rocket-launch"></i>
+                        </div>
+                        <span class="font-bold text-lg text-white">Interview<span class="text-brand-accent">Ready</span></span>
                     </div>
-                    <span class="font-bold text-lg text-white">Interview<span class="text-brand-accent">Ready</span></span>
+                    <p class="text-sm leading-relaxed max-w-sm">
+                        Helping students and entry-level talent bridge the gap between application and interview with ATS-optimized, high-impact resumes. Currently accepting waitlist applications for our 2026 launch.
+                    </p>
                 </div>
-                
-                <div class="flex space-x-6 text-sm">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-white transition-colors">FAQ</a>
+
+                <!-- Connection & External -->
+                <div class="md:text-right">
+                    <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">Project Hub</h4>
+                    <div class="flex flex-col md:items-end gap-4 text-sm">
+                        <a href="https://launchpointco.github.io/InterviewReady/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand-accent transition-colors group">
+                            <i class="ph ph-github-logo text-lg group-hover:scale-110 transition-transform"></i>
+                            Main Site Mirror
+                        </a>
+                        <a href="mailto:interviewreadybusiness@gmail.com" class="flex items-center gap-2 hover:text-brand-accent transition-colors group">
+                            <i class="ph ph-envelope-simple text-lg group-hover:scale-110 transition-transform"></i>
+                            interviewreadybusiness@gmail.com
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="text-center mt-12 text-sm text-slate-500">
-                &copy; <span id="year"></span> InterviewReady. All rights reserved.
+
+            <div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; <span id="year"></span> InterviewReady. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <span>Bay Area, CA</span>
+                </div>
             </div>
         </div>
     </footer>
