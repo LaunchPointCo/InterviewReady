@@ -432,9 +432,9 @@
                         </div>
                         <span class="font-bold text-brand-dark text-lg">+$20</span>
                     </div>
-                    <h4 class="font-bold text-brand-dark mb-2">Custom Cover Letter</h4>
-                    <p class="text-sm text-slate-500 flex-grow mb-4">A fully personalized, compelling cover letter written specifically for your target role.</p>
-                    <a href="#contact" class="text-sm font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
+                    <h4 class="font-bold text-brand-dark mb-2 text-sm">Custom Cover Letter</h4>
+                    <p class="text-xs text-slate-500 flex-grow mb-4">A fully personalized, compelling cover letter written specifically for your target role.</p>
+                    <a href="#contact" class="text-xs font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
                 </div>
 
                 <!-- Add-on 2 -->
@@ -445,9 +445,9 @@
                         </div>
                         <span class="font-bold text-brand-dark text-lg">+$35</span>
                     </div>
-                    <h4 class="font-bold text-brand-dark mb-2">LinkedIn Makeover</h4>
-                    <p class="text-sm text-slate-500 flex-grow mb-4">Complete overhaul of your headline, about section, and experience to attract recruiters.</p>
-                    <a href="#contact" class="text-sm font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
+                    <h4 class="font-bold text-brand-dark mb-2 text-sm">LinkedIn Makeover</h4>
+                    <p class="text-xs text-slate-500 flex-grow mb-4">Complete overhaul of your headline, about section, and experience to attract recruiters.</p>
+                    <a href="#contact" class="text-xs font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
                 </div>
 
                 <!-- Add-on 3 -->
@@ -458,9 +458,9 @@
                         </div>
                         <span class="font-bold text-brand-dark text-lg">+$10</span>
                     </div>
-                    <h4 class="font-bold text-brand-dark mb-2">24-Hour Rush</h4>
-                    <p class="text-sm text-slate-500 flex-grow mb-4">Jump to the front of the line and get your first draft back within 24 hours.</p>
-                    <a href="#contact" class="text-sm font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
+                    <h4 class="font-bold text-brand-dark mb-2 text-sm">24-Hour Rush</h4>
+                    <p class="text-xs text-slate-500 flex-grow mb-4">Jump to the front of the line and get your first draft back within 24 hours.</p>
+                    <a href="#contact" class="text-xs font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
                 </div>
 
                 <!-- Add-on 4 -->
@@ -471,9 +471,9 @@
                         </div>
                         <span class="font-bold text-brand-dark text-lg">+$10</span>
                     </div>
-                    <h4 class="font-bold text-brand-dark mb-2">Follow-Up Toolkit</h4>
-                    <p class="text-sm text-slate-500 flex-grow mb-4">Proven email templates for networking, post-interview thank yous, and checking in.</p>
-                    <a href="#contact" class="text-sm font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
+                    <h4 class="font-bold text-brand-dark mb-2 text-sm">Follow-Up Toolkit</h4>
+                    <p class="text-xs text-slate-500 flex-grow mb-4">Proven email templates for networking, post-interview thank yous, and checking in.</p>
+                    <a href="#contact" class="text-xs font-semibold text-brand-accent hover:text-brand-accentHover flex items-center gap-1">Get Notified <i class="ph-bold ph-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -605,12 +605,12 @@
                         
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Service of Interest</label>
-                            <select name="service" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all appearance-none">
-                                <option selected disabled>Select the service you're interested in</option>
-                                <option>Basic Rewrite</option>
-                                <option>Resume + Tailoring</option>
-                                <option>The Fresh Start (From Scratch)</option>
-                                <option>Other / General Interest</option>
+                            <select name="service" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all appearance-none">
+                                <option value="" selected disabled>Select the service you're interested in</option>
+                                <option value="Basic Rewrite">Basic Rewrite</option>
+                                <option value="Resume + Tailoring">Resume + Tailoring</option>
+                                <option value="The Fresh Start">The Fresh Start (From Scratch)</option>
+                                <option value="Other / General Interest">Other / General Interest</option>
                             </select>
                         </div>
 
@@ -674,6 +674,26 @@
         </div>
     </footer>
 
+    <!-- Waitlist Confirmation Modal -->
+    <div id="confirmModal" class="fixed inset-0 z-[200] flex items-center justify-center p-4 hidden">
+      <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="modalBackdrop"></div>
+      <div class="relative bg-white rounded-3xl p-10 max-w-md w-full text-center shadow-2xl border border-slate-100">
+        <div class="w-20 h-20 bg-brand-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <i class="ph-fill ph-check-circle text-5xl text-brand-accent"></i>
+        </div>
+        <h2 class="text-3xl font-extrabold text-brand-dark mb-2">You're In!</h2>
+        <p class="text-slate-500 mb-6">Your spot has been secured on the InterviewReady waitlist.</p>
+        <div class="bg-brand-light rounded-2xl py-6 px-8 mb-6 border border-slate-200">
+          <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-1">Your Waitlist Number</p>
+          <p id="waitlistNumber" class="text-7xl font-black text-brand-accent">#17</p>
+        </div>
+        <p class="text-slate-500 text-sm mb-8">We'll notify you at your email the moment we launch. Stay tuned — interviews are coming your way.</p>
+        <button onclick="document.getElementById('confirmModal').classList.add('hidden')" class="w-full bg-brand-accent hover:bg-brand-accentHover text-white font-bold py-4 rounded-xl transition-colors">
+          Got It!
+        </button>
+      </div>
+    </div>
+
     <!-- JavaScript -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -710,27 +730,35 @@
             }
         }, { passive: true });
 
-        // AJAX FORM HANDLER FOR FORMSPREE
+        // Close modal on backdrop click
+        document.getElementById('modalBackdrop').addEventListener('click', () => {
+            document.getElementById('confirmModal').classList.add('hidden');
+        });
+
+        // --- SUPABASE CONFIG ---
+        // Replace these two values with your own from supabase.com → Settings → API
+        const SUPABASE_URL = 'https://YOUR_PROJECT.supabase.co';
+        const SUPABASE_KEY = 'YOUR_ANON_KEY';
+
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const submitBtn = this.querySelector('button[type="submit"]');
-            const statusMsg = document.getElementById('formStatus');
             const errorMsg = document.getElementById('formError');
             const originalText = submitBtn.innerHTML;
             
             // UI Feedback: Start Loading
             submitBtn.innerHTML = '<i class="ph-bold ph-spinner animate-spin"></i> Saving...';
             submitBtn.disabled = true;
-            statusMsg.classList.add('hidden');
             errorMsg.classList.add('hidden');
 
             // Gather Data
             const formData = new FormData(this);
 
             try {
-                const response = await fetch(this.action, {
+                // Step 1: Submit form to Formspree
+                const formResponse = await fetch(this.action, {
                     method: 'POST',
                     body: formData,
                     headers: {
@@ -738,19 +766,40 @@
                     }
                 });
 
-                if (response.ok) {
-                    // SUCCESS
+                if (formResponse.ok) {
+                    let waitlistNumber = 17; // Fallback starting point
+
+                    // Step 2: Try to increment counter in Supabase
+                    try {
+                        const countRes = await fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_and_get`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'apikey': SUPABASE_KEY,
+                                'Authorization': `Bearer ${SUPABASE_KEY}`
+                            },
+                            body: JSON.stringify({})
+                        });
+
+                        if (countRes.ok) {
+                            const newCount = await countRes.json();
+                            waitlistNumber = 17 + newCount;
+                        }
+                    } catch (supabaseErr) {
+                        console.error("Supabase Error:", supabaseErr);
+                        // We continue with fallback #17 so user isn't stuck
+                    }
+
+                    // Step 3: Show modal with the dynamic waitlist number
+                    document.getElementById('waitlistNumber').textContent = '#' + waitlistNumber;
                     this.reset();
-                    statusMsg.classList.remove('hidden');
+                    document.getElementById('confirmModal').classList.remove('hidden');
                 } else {
-                    // SERVER ERROR (e.g. Rate Limit)
                     errorMsg.classList.remove('hidden');
                 }
             } catch (err) {
-                // NETWORK ERROR
                 errorMsg.classList.remove('hidden');
             } finally {
-                // Reset Button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }
