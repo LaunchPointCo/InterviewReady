@@ -590,21 +590,22 @@
 
                 <!-- Form -->
                 <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100">
-                    <form id="contactForm" class="space-y-6">
+                    <!-- Integrated with specific Formspree endpoint mojyrrlv -->
+                    <form id="contactForm" action="https://formspree.io/f/mojyrrlv" method="POST" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 mb-2">Name</label>
-                                <input type="text" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all" placeholder="John Doe">
+                                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all" placeholder="John Doe">
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 mb-2">Email</label>
-                                <input type="email" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all" placeholder="john@university.edu">
+                                <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all" placeholder="john@university.edu">
                             </div>
                         </div>
                         
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Service of Interest</label>
-                            <select class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all appearance-none">
+                            <select name="service" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all appearance-none">
                                 <option selected disabled>Select the service you're interested in</option>
                                 <option>Basic Rewrite</option>
                                 <option>Resume + Tailoring</option>
@@ -615,7 +616,7 @@
 
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Tell us about your goals (Optional)</label>
-                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all" placeholder="e.g., Targeting a Summer Internship in Fintech..."></textarea>
+                            <textarea name="goals" rows="4" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent transition-all" placeholder="e.g., Targeting a Summer Internship in Fintech..."></textarea>
                         </div>
 
                         <button type="submit" class="w-full bg-brand-dark hover:bg-brand-blue text-white font-bold py-4 rounded-xl transition-colors shadow-lg flex items-center justify-center gap-2">
@@ -623,6 +624,7 @@
                             <i class="ph-bold ph-paper-plane-right"></i>
                         </button>
                         <p id="formStatus" class="hidden text-center text-sm font-bold text-green-600 mt-4">Success! You've been added to the launch list.</p>
+                        <p id="formError" class="hidden text-center text-sm font-bold text-red-600 mt-4">Oops! Something went wrong. Please try again.</p>
                     </form>
                 </div>
 
@@ -635,22 +637,22 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 <!-- Brand & Description -->
-                <div class="col-span-1">
-                    <div class="flex items-center gap-2 mb-6">
+                <div class="col-span-1 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-6">
                         <div class="w-8 h-8 bg-brand-accent rounded-lg flex items-center justify-center text-white">
                             <i class="ph-bold ph-rocket-launch"></i>
                         </div>
                         <span class="font-bold text-lg text-white">Interview<span class="text-brand-accent">Ready</span></span>
                     </div>
-                    <p class="text-sm leading-relaxed max-w-sm">
+                    <p class="text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
                         Helping students and entry-level talent bridge the gap between application and interview with ATS-optimized, high-impact resumes. Currently accepting waitlist applications for our 2026 launch.
                     </p>
                 </div>
 
                 <!-- Connection & External -->
-                <div class="md:text-right">
+                <div class="text-center md:text-right flex flex-col items-center md:items-end">
                     <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-wider">Project Hub</h4>
-                    <div class="flex flex-col md:items-end gap-4 text-sm">
+                    <div class="flex flex-col items-center md:items-end gap-4 text-sm">
                         <a href="https://launchpointco.github.io/InterviewReady/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand-accent transition-colors group">
                             <i class="ph ph-github-logo text-lg group-hover:scale-110 transition-transform"></i>
                             Main Site Mirror
@@ -708,26 +710,50 @@
             }
         }, { passive: true });
 
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // AJAX FORM HANDLER FOR FORMSPREE
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+            
             const submitBtn = this.querySelector('button[type="submit"]');
+            const statusMsg = document.getElementById('formStatus');
+            const errorMsg = document.getElementById('formError');
             const originalText = submitBtn.innerHTML;
             
+            // UI Feedback: Start Loading
             submitBtn.innerHTML = '<i class="ph-bold ph-spinner animate-spin"></i> Saving...';
             submitBtn.disabled = true;
+            statusMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
 
-            setTimeout(() => {
+            // Gather Data
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // SUCCESS
+                    this.reset();
+                    statusMsg.classList.remove('hidden');
+                } else {
+                    // SERVER ERROR (e.g. Rate Limit)
+                    errorMsg.classList.remove('hidden');
+                }
+            } catch (err) {
+                // NETWORK ERROR
+                errorMsg.classList.remove('hidden');
+            } finally {
+                // Reset Button
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-                this.reset();
-                
-                const status = document.getElementById('formStatus');
-                status.classList.remove('hidden');
-                
-                setTimeout(() => {
-                    status.classList.add('hidden');
-                }, 5000);
-            }, 1500);
+            }
         });
     </script>
 </body>
